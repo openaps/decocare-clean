@@ -1,3 +1,8 @@
+# /bin/bash 
+## cat /bin/bash
+```bash
+```
+## cat logs/explain.log
 OUT
 ## Observations
 Sat Jan 12 14:49:59 PST 2013
