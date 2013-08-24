@@ -1,38 +1,18 @@
-OUT
-## Observations
-Sat Aug 24 19:36:07 EDT 2013
+## run all ./status-quo.sh /dev/ttyUSB0 047006
+./status-quo.sh
+#!/bin/bash
+# make an example of an interesting log worth sharing
 
-## stick
-
-* not ok
-
-## pump
-
-
-## downloaded: 0
-
-```
-```
+CMD="$*"
+NAME=$0
+export PORT=${1-'/dev/ttyUSB0'}
+export SERIAL=${2-'208850'}
 
 
-## commands session:finished: 0
+. bin/common
 
-```
-```
+run_all 2>&1 | tee status-quo.log
 
-howdy! pump runs were NOT OK
-
-### Last send command
-
-```
-```
-### stats before traceback
-
-```
-```
-### Traceback
-
-```
 echo "OUT" | tee logs/explain.log
 . ./explain-brief.sh | tee -a logs/explain.log
 explain_markdown
@@ -145,7 +125,6 @@ Command exited with non-zero status 1
 python decocare/download.py /dev/ttyUSB0 047006
 	elapsed 0:00.10
 	user 0.08
+	system 0.01
+	CPU 98% (0text+0data 59408max)k
 ```
-* NO CRC ERROR FOUND
-* no nak found
-* NOT A CLEAN RUN
