@@ -1,5 +1,0 @@
-#!/bin/bash
-
-INPUT=${1-'-'}
-cat $INPUT | cut -d',' -f 1,2 | tr ',' ' '
-
